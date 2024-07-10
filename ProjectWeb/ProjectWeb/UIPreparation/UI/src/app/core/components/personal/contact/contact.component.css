@@ -1,0 +1,34 @@
+.body {
+    padding-top: 8%;
+    background-image: linear-gradient(45deg, rgb(106,130,141),rgb(64,83,91),rgb(37,51,57));
+}
+
+
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    background-color: white; /* Inputların arka plan rengini beyaz yapar */
+    color: black; /* Yazı rengini siyah yapar */
+    border: 1px solid #ccc; /* Sınır rengini gri yapar */
+    padding: 10px; /* İç boşluk */
+    border-radius: 4px; /* Kenarların yumuşatılması */
+  }
+  
+  .form-control::placeholder {
+    color: #aaa; /* Placeholder rengini gri yapar */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  

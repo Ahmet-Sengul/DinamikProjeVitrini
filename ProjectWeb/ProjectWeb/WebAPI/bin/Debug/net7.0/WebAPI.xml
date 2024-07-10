@@ -1,0 +1,1116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:WebAPI.Controllers.AboutsController">
+            <summary>
+            Abouts If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.AboutsController.GetList">
+            <summary>
+            List Abouts
+            </summary>
+            <remarks>Abouts</remarks>
+            <return>List Abouts</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.AboutsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Abouts</remarks>
+            <return>Abouts List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.AboutsController.Add(Business.Handlers.Abouts.Commands.CreateAboutCommand)">
+            <summary>
+            Add About.
+            </summary>
+            <param name="createAbout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AboutsController.Update(Business.Handlers.Abouts.Commands.UpdateAboutCommand)">
+            <summary>
+            Update About.
+            </summary>
+            <param name="updateAbout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AboutsController.Delete(Business.Handlers.Abouts.Commands.DeleteAboutCommand)">
+            <summary>
+            Delete About.
+            </summary>
+            <param name="deleteAbout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.AuthController">
+            <summary>
+            Make it Authorization operations
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Login(Business.Handlers.Authorizations.Queries.LoginUserQuery)">
+            <summary>
+            Make it User Login operations
+            </summary>
+            <param name="loginModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Register(Business.Handlers.Authorizations.Commands.RegisterUserCommand)">
+            <summary>
+             Make it User Register operations
+            </summary>
+            <param name="createUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.ForgotPassword(Business.Handlers.Authorizations.Commands.ForgotPasswordCommand)">
+            <summary>
+            Make it Forgot Password operations
+            </summary>
+            <remarks>tckimlikno</remarks>
+            <return></return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.ChangeUserPassword(Business.Handlers.Users.Commands.UserChangePasswordCommand)">
+            <summary>
+            Make it Change Password operation
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Verification(Business.Handlers.Authorizations.Queries.VerifyCidQuery)">
+            <summary>
+            Mobile Login
+            </summary>
+            <param name="verifyCid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.LoginTest">
+            <summary>
+            Token decode test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.BaseApiController">
+            <summary>
+            Base controller
+            </summary>
+        </member>
+        <member name="P:WebAPI.Controllers.BaseApiController.Mediator">
+            <summary>
+            It is for getting the Mediator instance creation process from the base controller.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Success``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Success``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Created``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Created``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.NoContent``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.NoContent``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.BadRequest``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.BadRequest``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Unauthorized``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Unauthorized``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Forbidden``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Forbidden``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.NotFound``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.NotFound``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Error``1(System.String,System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="message"></param>
+             <param name="internalMessage"></param>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BaseApiController.Error``1(Core.Utilities.Results.ApiResult{``0})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.BlogsController">
+            <summary>
+            Blogs If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.BlogsController.GetList">
+            <summary>
+            List Blogs
+            </summary>
+            <remarks>Blogs</remarks>
+            <return>List Blogs</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.BlogsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Blogs</remarks>
+            <return>Blogs List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.BlogsController.Add(Business.Handlers.Blogs.Commands.CreateBlogCommand)">
+            <summary>
+            Add Blog.
+            </summary>
+            <param name="createBlog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BlogsController.Update(Business.Handlers.Blogs.Commands.UpdateBlogCommand)">
+            <summary>
+            Update Blog.
+            </summary>
+            <param name="updateBlog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.BlogsController.Delete(Business.Handlers.Blogs.Commands.DeleteBlogCommand)">
+            <summary>
+            Delete Blog.
+            </summary>
+            <param name="deleteBlog"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.ContactMessagesController">
+            <summary>
+            ContactMessages If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactMessagesController.GetList">
+            <summary>
+            List ContactMessages
+            </summary>
+            <remarks>ContactMessages</remarks>
+            <return>List ContactMessages</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactMessagesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>ContactMessages</remarks>
+            <return>ContactMessages List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.ContactMessagesController.Add(Business.Handlers.ContactMessages.Commands.CreateContactMessageCommand)">
+            <summary>
+            Add ContactMessage.
+            </summary>
+            <param name="createContactMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactMessagesController.Update(Business.Handlers.ContactMessages.Commands.UpdateContactMessageCommand)">
+            <summary>
+            Update ContactMessage.
+            </summary>
+            <param name="updateContactMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactMessagesController.Delete(Business.Handlers.ContactMessages.Commands.DeleteContactMessageCommand)">
+            <summary>
+            Delete ContactMessage.
+            </summary>
+            <param name="deleteContactMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.ContactsController">
+            <summary>
+            Contacts If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactsController.GetList">
+            <summary>
+            List Contacts
+            </summary>
+            <remarks>Contacts</remarks>
+            <return>List Contacts</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Contacts</remarks>
+            <return>Contacts List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.ContactsController.Add(Business.Handlers.Contacts.Commands.CreateContactCommand)">
+            <summary>
+            Add Contact.
+            </summary>
+            <param name="createContact"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactsController.Update(Business.Handlers.Contacts.Commands.UpdateContactCommand)">
+            <summary>
+            Update Contact.
+            </summary>
+            <param name="updateContact"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.ContactsController.Delete(Business.Handlers.Contacts.Commands.DeleteContactCommand)">
+            <summary>
+            Delete Contact.
+            </summary>
+            <param name="deleteContact"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.GroupClaimsController">
+             <summary>
+            
+             </summary>
+            
+        </member>
+        <member name="M:WebAPI.Controllers.GroupClaimsController.GetList">
+            <summary>
+            GroupClaims list
+            </summary>
+            <remarks>GroupClaims</remarks>
+            <return>GroupClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupClaimsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>GroupClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupClaimsController.GetGroupClaimsByGroupId(System.Int32)">
+            <summary>
+            Brings up Claims by Group Id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>GroupClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupClaimsController.Add(Business.Handlers.GroupClaims.Commands.CreateGroupClaimCommand)">
+            <summary>
+            Addded GroupClaim .
+            </summary>
+            <param name="createGroupClaim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupClaimsController.Update(Entities.Dtos.UpdateGroupClaimDto)">
+            <summary>
+            Update GroupClaim.
+            </summary>
+            <param name="updateGroupClaimDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupClaimsController.Delete(System.Int32)">
+            <summary>
+            Delete GroupClaim.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.GroupsController">
+             <summary>
+             If controller methods will not be Authorize, [AllowAnonymous] is used.
+             </summary>
+            
+        </member>
+        <member name="M:WebAPI.Controllers.GroupsController.GetList">
+            <summary>
+            List Groups
+            </summary>
+            <remarks>bla bla bla Groups</remarks>
+            <return>Grup List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>Grup List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupsController.Getselectedlist">
+            <summary>
+            Group Lookup
+            </summary>
+            <remarks>Group Lookup döner </remarks>
+            <return>Grup Lokup</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupsController.Add(Business.Handlers.Groups.Commands.CreateGroupCommand)">
+            <summary>
+            Add Group .
+            </summary>
+            <param name="createGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupsController.Update(Entities.Dtos.UpdateGroupDto)">
+            <summary>
+            Update Group.
+            </summary>
+            <param name="updateGroupDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GroupsController.Delete(System.Int32)">
+            <summary>
+            Delete Group.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.HomePagesController">
+            <summary>
+            HomePages If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.HomePagesController.GetList">
+            <summary>
+            List HomePages
+            </summary>
+            <remarks>HomePages</remarks>
+            <return>List HomePages</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.HomePagesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>HomePages</remarks>
+            <return>HomePages List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.HomePagesController.Add(Business.Handlers.HomePages.Commands.CreateHomePageCommand)">
+            <summary>
+            Add HomePage.
+            </summary>
+            <param name="createHomePage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.HomePagesController.Update(Business.Handlers.HomePages.Commands.UpdateHomePageCommand)">
+            <summary>
+            Update HomePage.
+            </summary>
+            <param name="updateHomePage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.HomePagesController.Delete(Business.Handlers.HomePages.Commands.DeleteHomePageCommand)">
+            <summary>
+            Delete HomePage.
+            </summary>
+            <param name="deleteHomePage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.LanguagesController">
+            <summary>
+            If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.GetLookupListWithCode">
+            <summary>
+            LanguageLookUp with Code
+            </summary>
+            <remarks>bla bla bla Languages</remarks>
+            <return>Languages List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.GetLookupList">
+            <summary>
+            LanguageLookUp
+            </summary>
+            <remarks>bla bla bla Languages</remarks>
+            <return>Languages List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.GetList">
+            <summary>
+            List languages
+            </summary>
+            <remarks>bla bla bla Languages</remarks>
+            <return>Languages List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>Language List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.Add(Business.Handlers.Languages.Commands.CreateLanguageCommand)">
+            <summary>
+            Add Language.
+            </summary>
+            <param name="createLanguage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.Update(Entities.Dtos.UpdateLanguageDto)">
+            <summary>
+            Update Language.
+            </summary>
+            <param name="updateLanguageDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.LanguagesController.Delete(System.Int32)">
+            <summary>
+            Delete Language.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.LogsController">
+            <summary>
+            If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.LogsController.GetList">
+            <summary>
+            List Logs
+            </summary>
+            <remarks>bla bla bla Logs</remarks>
+            <return>Logs List</return>
+            <response code="200"></response>
+        </member>
+        <member name="T:WebAPI.Controllers.MembersController">
+            <summary>
+            Members If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MembersController.GetList">
+            <summary>
+            List Members
+            </summary>
+            <remarks>Members</remarks>
+            <return>List Members</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.MembersController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Members</remarks>
+            <return>Members List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MembersController.Add(Business.Handlers.Members.Commands.CreateMemberCommand)">
+            <summary>
+            Add Member.
+            </summary>
+            <param name="createMember"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MembersController.Update(Business.Handlers.Members.Commands.UpdateMemberCommand)">
+            <summary>
+            Update Member.
+            </summary>
+            <param name="updateMember"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MembersController.Delete(Business.Handlers.Members.Commands.DeleteMemberCommand)">
+            <summary>
+            Delete Member.
+            </summary>
+            <param name="deleteMember"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.OperationClaimsController">
+             <summary>
+             If controller methods will not be Authorize, [AllowAnonymous] is used.
+             </summary>
+            
+        </member>
+        <member name="M:WebAPI.Controllers.OperationClaimsController.GetList">
+            <summary>
+            List OperationClaims
+            </summary>
+            <remarks>bla bla bla OperationClaims</remarks>
+            <return>OperationClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.OperationClaimsController.GetByid(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla OperationClaims</remarks>
+            <return>OperationClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.OperationClaimsController.GetOperationClaimLookup">
+            <summary>
+            List OperationClaims
+            </summary>
+            <remarks>bla bla bla OperationClaims</remarks>
+            <return>OperationClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.OperationClaimsController.Update(Entities.Dtos.UpdateOperationClaimDto)">
+            <summary>
+            Update OperationClaim .
+            </summary>
+            <param name="updateOperationClaimDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.OperationClaimsController.GetUserClaimsFromCache">
+            <summary>
+            List OperationClaims
+            </summary>
+            <remarks>bla bla bla OperationClaims</remarks>
+            <return>OperationClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="T:WebAPI.Controllers.TeamRolesController">
+            <summary>
+            TeamRoles If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamRolesController.GetList">
+            <summary>
+            List TeamRoles
+            </summary>
+            <remarks>TeamRoles</remarks>
+            <return>List TeamRoles</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamRolesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>TeamRoles</remarks>
+            <return>TeamRoles List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.TeamRolesController.Add(Business.Handlers.TeamRoles.Commands.CreateTeamRoleCommand)">
+            <summary>
+            Add TeamRole.
+            </summary>
+            <param name="createTeamRole"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamRolesController.Update(Business.Handlers.TeamRoles.Commands.UpdateTeamRoleCommand)">
+            <summary>
+            Update TeamRole.
+            </summary>
+            <param name="updateTeamRole"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamRolesController.Delete(Business.Handlers.TeamRoles.Commands.DeleteTeamRoleCommand)">
+            <summary>
+            Delete TeamRole.
+            </summary>
+            <param name="deleteTeamRole"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.TeamsController">
+            <summary>
+            Teams If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamsController.GetList">
+            <summary>
+            List Teams
+            </summary>
+            <remarks>Teams</remarks>
+            <return>List Teams</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Teams</remarks>
+            <return>Teams List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.TeamsController.Add(Business.Handlers.Teams.Commands.CreateTeamCommand)">
+            <summary>
+            Add Team.
+            </summary>
+            <param name="createTeam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamsController.Update(Business.Handlers.Teams.Commands.UpdateTeamCommand)">
+            <summary>
+            Update Team.
+            </summary>
+            <param name="updateTeam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TeamsController.Delete(Business.Handlers.Teams.Commands.DeleteTeamCommand)">
+            <summary>
+            Delete Team.
+            </summary>
+            <param name="deleteTeam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.TecnologiesController">
+            <summary>
+            Tecnologies If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.TecnologiesController.GetList">
+            <summary>
+            List Tecnologies
+            </summary>
+            <remarks>Tecnologies</remarks>
+            <return>List Tecnologies</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.TecnologiesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Tecnologies</remarks>
+            <return>Tecnologies List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.TecnologiesController.Add(Business.Handlers.Tecnologies.Commands.CreateTecnologyCommand)">
+            <summary>
+            Add Tecnology.
+            </summary>
+            <param name="createTecnology"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TecnologiesController.Update(Business.Handlers.Tecnologies.Commands.UpdateTecnologyCommand)">
+            <summary>
+            Update Tecnology.
+            </summary>
+            <param name="updateTecnology"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TecnologiesController.Delete(Business.Handlers.Tecnologies.Commands.DeleteTecnologyCommand)">
+            <summary>
+            Delete Tecnology.
+            </summary>
+            <param name="deleteTecnology"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.TranslatesController">
+            <summary>
+            If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.GetTranslatesByLang(System.String)">
+            <summary>
+            Get translates by lang
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.GetList">
+            <summary>
+            List Translate
+            </summary>
+            <remarks>bla bla bla Translates</remarks>
+            <return>Translates List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.GetTranslateListDto">
+            <summary>
+            List Dto Translate
+            </summary>
+            <remarks>bla bla bla Translates</remarks>
+            <return>Translates List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>Translate List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.Add(Business.Handlers.Translates.Commands.CreateTranslateCommand)">
+            <summary>
+            Add Translate.
+            </summary>
+            <param name="createTranslate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.Update(Entities.Dtos.UpdateTranslateDto)">
+            <summary>
+            Update Translate.
+            </summary>
+            <param name="updateTranslateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.TranslatesController.Delete(System.Int32)">
+            <summary>
+            Delete Translate.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.UserClaimsController">
+             <summary>
+             If controller methods will not be Authorize, [AllowAnonymous] is used.
+             </summary>
+            
+        </member>
+        <member name="M:WebAPI.Controllers.UserClaimsController.GetList">
+            <summary>
+            List UserClaims
+            </summary>
+            <remarks>bla bla bla UserClaims</remarks>
+            <return>UserClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserClaimsController.GetByUserId(System.Int32)">
+            <summary>
+            Id sine göre detaylarını getirir.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>UserClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserClaimsController.GetOperationClaimByUserId(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>UserClaims List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserClaimsController.Add(Business.Handlers.UserClaims.Commands.CreateUserClaimCommand)">
+            <summary>
+            Add GroupClaim.
+            </summary>
+            <param name="createUserClaim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserClaimsController.Update(Entities.Dtos.UpdateUserClaimDto)">
+            <summary>
+            Update GroupClaim.
+            </summary>
+            <param name="updateUserClaimDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserClaimsController.Delete(System.Int32)">
+            <summary>
+            Delete GroupClaim.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.UserGroupsController">
+             <summary>
+             If controller methods will not be Authorize, [AllowAnonymous] is used.
+             </summary>
+            
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.GetList">
+            <summary>
+            List UserGroup
+            </summary>
+            <remarks>bla bla bla UserGroups</remarks>
+            <return>Kullanıcı Grup List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.GetByUserId(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.GetGroupClaimsByUserId(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>UserGroups List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.GetUsersInGroupByGroupid(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>UserGroups List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.Add(Business.Handlers.UserGroups.Commands.CreateUserGroupCommand)">
+            <summary>
+            Add UserGroup.
+            </summary>
+            <param name="createUserGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.Update(Business.Handlers.UserGroups.Commands.UpdateUserGroupCommand)">
+            <summary>
+            Update UserGroup.
+            </summary>
+            <param name="updateUserGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.UpdateByGroupId(Entities.Dtos.UpdateUserGroupByGroupIdDto)">
+            <summary>
+            Update UserGroup by Id.
+            </summary>
+            <param name="updateUserGroupByGroupIdDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserGroupsController.Delete(System.Int32)">
+            <summary>
+            Delete UserGroup.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.UserMessagesesController">
+            <summary>
+            UserMessageses If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.UserMessagesesController.GetList">
+            <summary>
+            List UserMessageses
+            </summary>
+            <remarks>UserMessageses</remarks>
+            <return>List UserMessageses</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UserMessagesesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>UserMessageses</remarks>
+            <return>UserMessageses List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.UserMessagesesController.Add(Business.Handlers.UserMessageses.Commands.CreateUserMessagesCommand)">
+            <summary>
+            Add UserMessages.
+            </summary>
+            <param name="createUserMessages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserMessagesesController.Update(Business.Handlers.UserMessageses.Commands.UpdateUserMessagesCommand)">
+            <summary>
+            Update UserMessages.
+            </summary>
+            <param name="updateUserMessages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UserMessagesesController.Delete(Business.Handlers.UserMessageses.Commands.DeleteUserMessagesCommand)">
+            <summary>
+            Delete UserMessages.
+            </summary>
+            <param name="deleteUserMessages"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.UsersController">
+            <summary>
+            If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.GetList">
+            <summary>
+            List Users
+            </summary>
+            <remarks>bla bla bla Users</remarks>
+            <return>Users List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.GetUserLookup">
+            <summary>
+            User Lookup
+            </summary>
+            <remarks>bla bla bla Users</remarks>
+            <return>Users List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>bla bla bla </remarks>
+            <return>Users List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.Add(Business.Handlers.Users.Commands.CreateUserCommand)">
+            <summary>
+            Add User.
+            </summary>
+            <param name="createUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.Update(Entities.Dtos.UpdateUserDto)">
+            <summary>
+            Update User.
+            </summary>
+            <param name="updateUserDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.Delete(System.Int32)">
+            <summary>
+            Delete User.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Program">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:WebAPI.Program.Main(System.String[])">
+             <summary>
+            
+             </summary>
+             <param name="args"></param>
+        </member>
+        <member name="M:WebAPI.Program.CreateHostBuilder(System.String[])">
+             <summary>
+            
+             </summary>
+             <param name="args"></param>
+             <returns></returns>
+        </member>
+        <member name="T:WebAPI.Startup">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">
+            <summary>
+            Constructor of <c>Startup</c>
+            </summary>
+            <param name="configuration"></param>
+            <param name="hostEnvironment"></param>
+        </member>
+        <member name="M:WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <remarks>
+            It is common to all configurations and must be called. Aspnet core does not call this method because there are other methods.
+            </remarks>
+            <param name="services"></param>
+        </member>
+        <member name="M:WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

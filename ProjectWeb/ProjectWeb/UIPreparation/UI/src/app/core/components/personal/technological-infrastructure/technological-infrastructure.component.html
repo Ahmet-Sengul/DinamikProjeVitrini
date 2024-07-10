@@ -1,0 +1,34 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-lg-1 order-2">
+                <header class="main-header text-white">
+                    <h1 class="mt-5"><strong>Technological</strong></h1>
+                    <h1><strong>Infrastructure</strong></h1>
+                </header>
+                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel rerum deserunt sint atque, ducimus eius sed inventore blanditiis cumque, at harum labore saepe ad, aliquid nemo repellat recusandae maxime pariatur.</p>
+            </div>
+            <div class="col-lg-6 order-lg-2 order-1">
+                <div class="right-column">
+                    <div class="description-container">
+                        <img src="../../../../../assets/img/tec/Critical thinking-bro.png" alt="Açıklama Resmi" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngFor="let item of tecnologyList" class="container">
+        <ul class="list-unstyled">
+            <li class="list-item">
+                <div class="item-container">
+                    <img src="../../../../../assets/img/homePage/Report-bro (1).png" alt="Resim 1" class="img-fluid">
+                    <div>
+                        <h5>{{item.tecHeader}}</h5>
+                        <p>{{item.tecDescription}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

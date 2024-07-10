@@ -1,0 +1,56 @@
+<div class="body d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-lg-6">
+        <div class="text-star justify-content-aligin">
+          <div class="headerBack">
+            <h1 class="header" style="font-weight: bold; font-size: 4em; color:#101025;">
+              {{activeProject.header}}</h1>
+          </div>
+          <h1 class="subHeader mb-5" style="font-weight: bold; font-size: 1.5em; color:#ffffff">{{activeProject.header}}
+          </h1>
+          <p class="paraf mt-3" style="color: #ffffff;">{{activeProject.description}}</p>
+          <button class="button" (click)="navigateToAbout()">Learn More</button>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="../../../../../assets/img/homePage/Report-bro.png" class="mt-3 img-fluid" alt="Resim Açıklaması">
+      </div>
+    </div>
+
+    <div class="about p-3">
+      <p>{{ activeAboutContent }}</p>
+    </div>
+
+    <div class="team">
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let teamMember of teamListToShow">
+          <div class="team-member">
+            <img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/b8826e852f63537a8c1ef575/gffgfg.jpg"
+              class="rounded-circle img-fluid" [alt]="teamMember.name + ' ' + teamMember.surname">
+            <h4>{{teamMember.name}} {{teamMember.surname}}</h4>
+            <p class="team-role">{{teamMember.role}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="technologies p-3">
+      <div class="tech text-center">
+        <h1 class="subHeader mb-5">Technology</h1>
+      </div>
+      <div class="row">
+        <div class="col" *ngFor="let item of tecnologyList">
+          <div class="card">
+            <img class="mt-3 img-fluid" src="../../../../../assets/img/homePage/Report-bro.png" alt="">
+            <div class="card__content">
+              <p class="card__title">{{item.tecHeader}}</p>
+              <p class="card__description">{{item.tecDescription}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button" style="margin-bottom: 8px;" (click)="navigateToTech()">Other Technologies</button>
+    </div>
+  </div>
+</div>

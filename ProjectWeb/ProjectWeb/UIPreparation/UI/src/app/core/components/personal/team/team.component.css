@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.headerBack{
+  background-color: #c6cbce;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 3%;
+  border-end-end-radius: 50%;
+  border-end-start-radius: 3%;
+}
+
+.teamBack{
+  background-color: #6a828d;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 20%;
+    border-end-end-radius: 50%;
+    border-end-start-radius: 20%;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+.team-member {
+  background-image: linear-gradient(45deg, rgb(106,130,141),rgb(64,83,91),rgb(37,51,57));
+  border-radius: 15px;
+  padding: 20px;
+  margin: 13px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.team-member img {
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 15px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+.team-member h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.team-role {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #000000;
+}
+.teamDes {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #f1f1f1;
+}
+.social-links a {
+  margin: 0 10px;
+  color: #000000;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.social-links a:hover {
+  color: #fff;
+}
+.button {
+  --color: rgb(16, 16, 37);
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.button:hover {
+  color: rgb(10, 25, 30);
+  color: white;
+  /* Yazı rengini beyaz yapar */
+
+}
+
+.button:active {
+  filter: brightness(.8);
+  color: white;
+  /* Yazı rengini beyaz yapar */
+
+}
+.body {
+  padding-top: 8%;
+  background-image: linear-gradient(45deg, rgb(106,130,141),rgb(64,83,91),rgb(37,51,57));}
+

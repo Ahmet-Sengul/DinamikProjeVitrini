@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "2v8v7/XCO5xwX3jBS/snqq68GtfcvF3BnlkaCBpMD4sG+EYUwX+qivO5DjvFf5JxLh1faJc9iZUfCGFFw/nIsQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\admin\\source\\repos\\ProjectWeb\\ProjectWeb\\UIPreparation\\UIPreparation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

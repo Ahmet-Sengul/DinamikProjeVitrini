@@ -1,0 +1,7 @@
+{
+  "Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\admin\\source\\repos\\ProjectWeb\\ProjectWeb\\Business",
+  "Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\admin\\source\\repos\\ProjectWeb\\ProjectWeb\\Core",
+  "DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\admin\\source\\repos\\ProjectWeb\\ProjectWeb\\DataAccess",
+  "Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\admin\\source\\repos\\ProjectWeb\\ProjectWeb\\Entities",
+  "WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\admin\\source\\repos\\ProjectWeb\\ProjectWeb\\WebAPI"
+}

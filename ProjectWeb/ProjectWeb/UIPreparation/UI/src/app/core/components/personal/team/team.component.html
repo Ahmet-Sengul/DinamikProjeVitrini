@@ -1,0 +1,25 @@
+<div class="body">
+    <div class="container text-center">
+        <div class="headerBack">
+            <h2 class="mb-5" style="color: #101025;"><strong>Meet Our Team</strong></h2>
+        </div>
+        <div class="teamBack">
+            <div class="row">
+                <div class="col-md-6 col-lg-3" *ngFor="let teamMember of teamListToShow">
+                    <div class="team-member">
+                        <img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/b8826e852f63537a8c1ef575/gffgfg.jpg" class="rounded-circle img-fluid" [alt]="teamMember.name + ' ' + teamMember.surname">
+                        <h4>{{teamMember.name}} {{teamMember.surname}}</h4>
+                        <p class="team-role">{{teamMember.role}}</p>
+                        <p class="teamDes">{{teamMember.description}}</p>
+                        <div class="social-links">
+                            <a [href]="teamMember.githubUrl"><i class="fab fa-github"></i></a>
+                            <a [href]="teamMember.linkedinUrl"><i class="fab fa-linkedin"></i></a>
+                            <a [href]="teamMember.websiteUrl"><i class="fab fa-chrome"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button mt-3" *ngIf = "!showAllMembers" (click)="showAllTeamMembers()">All Members</button>
+    </div>
+</div>

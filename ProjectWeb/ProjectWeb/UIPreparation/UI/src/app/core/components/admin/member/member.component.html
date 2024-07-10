@@ -1,0 +1,269 @@
+﻿<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">{{'MemberList'| translate}}</h4>
+            <a *ngIf="checkClaim('CreateMemberCommand')" class="pull-right" data-toggle="modal" data-target="#member"> <i style="color:white"  title="{{'Add'| translate}}" class="far fa-plus-square fa-2x"></i></a>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              
+              <div class="col-md-4 pull-right">
+                <mat-form-field>
+                  <mat-label>Filter</mat-label>
+                  <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+                </mat-form-field>
+              </div>
+							<table mat-table [dataSource]="dataSource" matSort>
+
+
+								
+                   <ng-container matColumnDef="id">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Id'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.id}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="createdDate">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'CreatedDate'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.createdDate}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="updatedDate">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'UpdatedDate'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.updatedDate}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="deletedDate">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'DeletedDate'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.deletedDate}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="name">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Name'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.name}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="surname">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Surname'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.surname}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="role">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Role'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.role}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="email">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Email'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.email}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="phoneNumber">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'PhoneNumber'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.phoneNumber}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="description">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Description'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.description}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="imageUrl">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'ImageUrl'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.imageUrl}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="githubUrl">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'GithubUrl'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.githubUrl}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="linkedinUrl">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'LinkedinUrl'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.linkedinUrl}}</td>
+				   </ng-container>
+	
+                   <ng-container matColumnDef="websiteUrl">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'WebsiteUrl'|translate}}</th>
+                     <td mat-cell *matCellDef="let element">{{element.websiteUrl}}</td>
+				   </ng-container>
+
+
+
+
+								<ng-container matColumnDef="update" >
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td style="width: 25px;" mat-cell
+                    *matCellDef="let element">
+                    <a *ngIf="checkClaim('UpdateMemberCommand')" data-toggle="modal" data-target="#member"  (click)="getMemberById(element.id)">
+                      <i title="{{'Update'| translate}}" style="color:#ff5722;" class="far fa-edit"></i>
+                    </a>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delete" >
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td  style="width: 25px;" mat-cell
+                    *matCellDef="let element">
+                    <a *ngIf="checkClaim('DeleteMemberCommand')" (confirm)="deleteMember(element.id)" [swal]="deleteSwal"><i title="{{'Delete'| translate}}" style="color: #D9534E;"class="fas fa-trash-alt"></i></a>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <tr class="mat-row" *matNoDataRow style="text-align: center;">
+                  <td class="mat-cell" colspan="4">{{'NoRecordsFound' |translate}} "{{input.value}}"</td>
+                </tr>
+							</table>
+							<mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+							</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal modal-angular fade" id="member" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          (click)="clearFormGroup(memberAddForm)"><span aria-hidden="true">&times;</span></button>
+        <h4 class="margin-top">
+           {{'MemberForm'| translate}}
+        </h4>
+        <div class="separator"></div>
+        <form *ngIf="memberAddForm" [formGroup]="memberAddForm" (ngSubmit)="save()">
+          
+				
+            
+       
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="name" type="text" id="name" name="name"
+                       formControlName="name" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('name')!.hasError('name') && memberAddForm.get('name')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="surname" type="text" id="surname" name="surname"
+                       formControlName="surname" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('surname')!.hasError('surname') && memberAddForm.get('surname')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="role" type="text" id="role" name="role"
+                       formControlName="role" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('role')!.hasError('role') && memberAddForm.get('role')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="email" type="text" id="email" name="email"
+                       formControlName="email" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('email')!.hasError('email') && memberAddForm.get('email')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="phoneNumber" type="text" id="phoneNumber" name="phoneNumber"
+                       formControlName="phoneNumber" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('phoneNumber')!.hasError('phoneNumber') && memberAddForm.get('phoneNumber')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="description" type="text" id="description" name="description"
+                       formControlName="description" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('description')!.hasError('description') && memberAddForm.get('description')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="imageUrl" type="text" id="imageUrl" name="imageUrl"
+                       formControlName="imageUrl" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('imageUrl')!.hasError('imageUrl') && memberAddForm.get('imageUrl')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="githubUrl" type="text" id="githubUrl" name="githubUrl"
+                       formControlName="githubUrl" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('githubUrl')!.hasError('githubUrl') && memberAddForm.get('githubUrl')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="linkedinUrl" type="text" id="linkedinUrl" name="linkedinUrl"
+                       formControlName="linkedinUrl" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('linkedinUrl')!.hasError('linkedinUrl') && memberAddForm.get('linkedinUrl')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col col-md-12">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="websiteUrl" type="text" id="websiteUrl" name="websiteUrl"
+                       formControlName="websiteUrl" />
+                <div class="alert alert-danger"
+                     *ngIf="memberAddForm.get('websiteUrl')!.hasError('websiteUrl') && memberAddForm.get('websiteUrl')!.dirty">
+                </div>
+              </mat-form-field>
+            </div>
+          </div>
+                   
+          <button mat-raised-button type="submit" class="btn btn-danger pull-right">{{'Save'|translate}}</button>
+          <div class="clearfix"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<swal #deleteSwal title="{{'DeleteConfirm' | translate}}" icon = "error" [showCancelButton]="true"
+	[confirmButtonText] = "'OK'"[cancelButtonText] = "'Cancel'" >
+</swal>
+

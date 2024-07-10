@@ -1,0 +1,80 @@
+<div class="body">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="wrapper">
+                        <div class="row no-gutters">
+                            <div class="col-md-7 d-flex align-items-stretch">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 class="mb-4 text-white"> &nbsp;&nbsp; Get in touch</h3>
+                                    <div class="container">
+                                        <form #contactForm="ngForm" (ngSubmit)="save()">
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <input type="text" class="form-control" name="name" ngModel placeholder="Name" formControlName="name">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <input type="email" class="form-control" name="email" ngModel placeholder="Email" formControlName="email">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="form-group">
+                                                  <input type="text" class="form-control" name="subject" ngModel placeholder="Subject" formControlName="subject">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="form-group">
+                                                  <textarea name="message" class="form-control" ngModel cols="30" rows="7" placeholder="Message" formControlName="message"></textarea>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="form-group">
+                                                  <input type="submit" value="Send Message" class="btn btn-primary">
+                                                  <div class="submitting"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 d-flex align-items-stretch">
+                                <div style="background-color: #253339;" class="info-wrap w-100 p-lg-5 p-4 text-white">
+                                    <h3 class="mb-4 mt-md-4">Contact us</h3>
+                                    <div class="dbox w-100 d-flex align-items-start m-2">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-map-marker"></span>
+                                        </div>
+                                        <div class="text pl-3">
+                                            <p><span>Address:</span>{{activeContact.adress}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="dbox w-100 d-flex align-items-center m-2">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-phone"></span>
+                                        </div>
+                                        <div class="text pl-3">
+                                            <p><span>Phone:</span>{{activeContact.phoneNumber}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="dbox w-100 d-flex align-items-center m-2">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-paper-plane"></span>
+                                        </div>
+                                        <div class="text pl-3">
+                                            <p><span>Email:</span>{{activeContact.email}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

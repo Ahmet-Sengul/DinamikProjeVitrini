@@ -1,0 +1,14 @@
+.navbar {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: black; /* Yazı rengi siyah */
+    font-size: 18px; /* Yazı boyutu */
+}
